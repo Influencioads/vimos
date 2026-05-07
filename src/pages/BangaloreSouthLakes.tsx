@@ -18,7 +18,7 @@ const BangaloreSouthLakes = () => {
     const [selectedImage, setSelectedImage] = useState<{ src: string, title: string } | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
 
-    const folderPath = "BANGLORE SOUTH LAKES DEVELOPED BY VIMOS (BEFORE AFTER PHOTOS)";
+    const folderPath = "BANGLORE SOUTH LAKES DEVELOPED BY VIMOS TECHNOCRATS (BEFORE AFTER PHOTOS)";
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -52,7 +52,7 @@ const BangaloreSouthLakes = () => {
                                     <span className="vimos-gradient-text-shine">SOUTH LAKES</span>
                                 </h2>
                                 <p className="text-white/70 max-w-2xl text-base md:text-lg font-body leading-relaxed uppercase tracking-widest font-bold">
-                                    DEVELOPED BY VIMOS
+                                    DEVELOPED BY VIMOS TECHNOCRATS
                                 </p>
                             </div>
                         </div>

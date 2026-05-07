@@ -6,6 +6,7 @@ import FooterSection from "@/components/FooterSection";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { lakesData } from "@/data/lakesData";
+import bannerImg from "@/assets/3.jpg";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,14 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Projects = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
-    const [currentHeroBg, setCurrentHeroBg] = useState(0);
 
-    const folderPath = "BANGLORE SOUTH LAKES DEVELOPED BY VIMOS (BEFORE AFTER PHOTOS)";
-
-    const heroImages = [
-        "https://images.unsplash.com/photo-1543877087-ebf71fde2be1?q=80&w=2070&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1502425573-0ff7e9e8f6fc?q=80&w=2070&auto=format&fit=crop"
-    ];
+    const folderPath = "BANGLORE SOUTH LAKES DEVELOPED BY VIMOS TECHNOCRATS (BEFORE AFTER PHOTOS)";
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -50,13 +45,8 @@ const Projects = () => {
             );
         }, containerRef);
 
-        const bgInterval = setInterval(() => {
-            setCurrentHeroBg((prev) => (prev + 1) % heroImages.length);
-        }, 5000);
-
         return () => {
             ctx.revert();
-            clearInterval(bgInterval);
         };
     }, []);
 
@@ -112,55 +102,22 @@ const Projects = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="projects-hero relative h-[60vh] min-h-[450px] flex items-center overflow-hidden bg-vimos-dark">
-                {/* Image Slider Background */}
+            <section className="projects-hero relative overflow-hidden bg-vimos-dark" style={{ minHeight: '75vh' }}>
                 <div className="absolute inset-0 z-0">
-                    {heroImages.map((img, idx) => (
-                        <div
-                            key={idx}
-                            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${idx === currentHeroBg ? 'opacity-100' : 'opacity-0'}`}
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-r from-vimos-dark via-vimos-dark/80 to-transparent z-10" />
-                            {/* <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" /> */}
-                            <img
-                                src={img}
-                                alt="Standard Background"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    ))}
+                    <img src={bannerImg} alt="Projects Banner" className="w-full h-full object-cover" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <div className="max-w-4xl mx-auto">
-                        {/* <span className="hero-reveal inline-block px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-semibold tracking-[0.4em] uppercase mb-6 backdrop-blur-sm">
-                            Our Portfolio
-                        </span> */}
-                        <h1 className="hero-reveal text-5xl md:text-6xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1]">
-                            Innovative <br />
-                            <span className="vimos-gradient-text-shine">Infrastructure</span>
-                        </h1>
-                        <p className="hero-reveal max-w-2xl mx-auto text-base md:text-lg text-white/70 mb-8 leading-relaxed font-body">
-                            Explore our comprehensive portfolio of sustainable engineering and environmental rejuvenation projects across the region.
-                        </p>
-                        {/* <div className="hero-reveal flex justify-center gap-4">
-                            <button
-                                onClick={() => {
-                                    const el = document.getElementById('featured-project');
-                                    el?.scrollIntoView({ behavior: 'smooth' });
-                                }}
-                                className="vimos-gradient px-10 py-4 rounded-full text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/20 flex items-center gap-3 group text-sm"
-                            >
-                                Our Projects <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                            </button>
-                        </div> */}
-                    </div>
-                </div>
+                <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }} />
 
-                {/* Scroll Indicator */}
-                {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-                    <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
-                </div> */}
+                <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" style={{ minHeight: '75vh' }}>
+                    <h1 className="hero-reveal text-5xl md:text-6xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1]">
+                        Innovative <br />
+                        <span className="vimos-gradient-text-shine">Infrastructure</span>
+                    </h1>
+                    <p className="hero-reveal max-w-2xl mx-auto text-base md:text-lg text-white/90 leading-relaxed font-body">
+                        Explore our comprehensive portfolio of sustainable engineering and environmental rejuvenation projects across the region.
+                    </p>
+                </div>
             </section>
 
             {/* Main Projects Display */}

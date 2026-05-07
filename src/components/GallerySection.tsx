@@ -6,50 +6,18 @@ import { ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// import img1 from "@/assets/gallery/2D section OF SHOPS.webp";
-import img2 from "@/assets/gallery/3D ELEVATION OF SHOPS.webp";
-import img3 from "@/assets/gallery/3D ELEVATION OF SHOPS2.webp";
-import img4 from "@/assets/gallery/3d Elevation of Swimming Fool Indoor Stadium.webp";
-import img5 from "@/assets/gallery/AUDITORIUM RANGAMANDIRA.webp";
-import img6 from "@/assets/gallery/AUDITORIUM RANGAMANDIRA2.webp";
-import img7 from "@/assets/gallery/DRP PREPARATION (BUILDING DIVISION).webp";
-import img8 from "@/assets/gallery/DRP.webp";
-import img9 from "@/assets/gallery/PMC1.webp";
-import img10 from "@/assets/gallery/PMC10.webp";
-import img11 from "@/assets/gallery/PMC11.webp";
-import img12 from "@/assets/gallery/PMC12.webp";
-import img13 from "@/assets/gallery/PMC13.webp";
-import img14 from "@/assets/gallery/PMC14.webp";
-import img15 from "@/assets/gallery/PMC15.webp";
-import img16 from "@/assets/gallery/PMC16.webp";
-import img17 from "@/assets/gallery/PMC17.webp";
-import img18 from "@/assets/gallery/PMC18.webp";
-import img19 from "@/assets/gallery/PMC19.webp";
-import img20 from "@/assets/gallery/PMC2.webp";
-import img21 from "@/assets/gallery/PMC3.webp";
-import img22 from "@/assets/gallery/PMC4.webp";
-import img23 from "@/assets/gallery/PMC5.webp";
-import img24 from "@/assets/gallery/PMC6.webp";
-import img25 from "@/assets/gallery/PMC7.webp";
-import img26 from "@/assets/gallery/PMC8.webp";
-import img27 from "@/assets/gallery/PMC9.webp";
-import img28 from "@/assets/gallery/POLICE BHAVANA IN RAMNAGARA.webp";
-import img29 from "@/assets/gallery/POLICE BHAVANA IN RAMNAGARA2.webp";
-import img30 from "@/assets/gallery/QUALITY CONTROL1.webp";
-import img31 from "@/assets/gallery/QUALITY CONTROL2.webp";
-import img32 from "@/assets/gallery/QUALITY CONTROL3.webp";
-import img33 from "@/assets/gallery/about.webp";
-import img34 from "@/assets/gallery/autoleveling1.webp";
-import img35 from "@/assets/gallery/autoleveling2.webp";
-import img36 from "@/assets/gallery/autoleveling3.webp";
-import img37 from "@/assets/gallery/survey1.webp";
-import img38 from "@/assets/gallery/survey2.webp";
-import img39 from "@/assets/gallery/survey3.webp";
+import img1 from "@/assets/gallery/gallery-1.jpeg";
+import img2 from "@/assets/gallery/gallery-2.jpeg";
+import img3 from "@/assets/gallery/gallery-3.jpeg";
+import img4 from "@/assets/gallery/gallery-4.jpeg";
+import img5 from "@/assets/gallery/gallery-5.jpeg";
+import img6 from "@/assets/gallery/gallery-6.jpeg";
+import img7 from "@/assets/gallery/gallery-7.jpeg";
+import img8 from "@/assets/gallery/gallery-8.jpeg";
+import img9 from "@/assets/gallery/gallery-9.jpeg";
 
 const galleryImages = [
-   img2,  img4, img6,  img9, img10,
-   img12, img13,    img19, img20,
-  img21,   img28, img29,  img33, 
+  img1, img2, img3, img4, img5, img6, img7, img8, img9
 ];
 
 // Show all images in the home page gallery section

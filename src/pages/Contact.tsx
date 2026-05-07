@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { MapPin, Phone, Globe, Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import heroImg from "@/assets/hero-building.webp";
+import heroImg from "@/assets/3.jpg";
 import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
@@ -83,17 +83,18 @@ const Contact = () => {
             <Navbar />
 
             {/* Hero Banner */}
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-vimos-dark">
+            <section className="relative overflow-hidden bg-vimos-dark" style={{ minHeight: '75vh' }}>
                 <div className="absolute inset-0 z-0">
-                    <img src={heroImg} alt="Contact Us" className="w-full h-full object-cover opacity-30" />
-                    {/* <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" /> */}
+                    <img src={heroImg} alt="Contact Us" className="w-full h-full object-cover" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }} />
+
+                <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" style={{ minHeight: '75vh' }}>
                     <h1 className="contact-hero-title text-4xl md:text-6xl font-heading font-bold text-white mb-6">
                         Get in <span className="vimos-gradient-text-shine">Touch</span>
                     </h1>
-                    <p className="contact-hero-title text-lg md:text-xl text-white/80 max-w-2xl mx-auto font-body">
+                    <p className="contact-hero-title text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-body">
                         We'd love to hear from you. Drop us a message and we'll respond as soon as possible.
                     </p>
                 </div>
@@ -258,6 +259,24 @@ const Contact = () => {
 
                     </div>
                 </div>
+            </section>
+
+            {/* Map Section */}
+            <section className="w-full h-[400px] md:h-[500px]">
+                <iframe
+                    title="Vimos Technocrats Location Map"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    scrolling="no"
+                    marginHeight={0}
+                    marginWidth={0}
+                    src="https://maps.google.com/maps?q=Vimos+House,+No+43,+2nd+Cross+Rd,+behind+Udupi+Utsav+hotel,+Kaveri+Layout,+Hennur+Bagalur+Main+Road,+Bengaluru,+560043&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    className="border-0"
+                    allowFullScreen
+                    aria-hidden="false"
+                    tabIndex={0}
+                />
             </section>
 
             <FooterSection />

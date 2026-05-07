@@ -399,7 +399,7 @@ const ProjectDetails = () => {
                             <div className="absolute inset-0 bg-primary/10" />
                             <div className="relative z-10">
                                 <h4 className="text-xl font-heading font-bold mb-4">Developed By</h4>
-                                <div className="text-sm tracking-widest uppercase font-bold text-primary mb-2">Vimos Technocrafts</div>
+                                <div className="text-sm tracking-widest uppercase font-bold text-primary mb-2">VIMOS TECHNOCRATS</div>
                                 <p className="text-white/60 text-sm">Committed to sustainable environmental engineering and ecosystem rejuvenation.</p>
                             </div>
                         </div>

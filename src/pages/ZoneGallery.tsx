@@ -57,7 +57,7 @@ const ZoneGallery = () => {
                                 {zone.title.split(' ').slice(0, -2).join(' ')} <span className="vimos-gradient-text-shine">{zone.title.split(' ').slice(-2).join(' ')}</span>
                             </h2>
                             <p className="text-white/70 max-w-4xl mx-auto text-sm md:text-base font-body leading-relaxed tracking-[0.5em] font-bold">
-                                DEVELOPED BY VIMOS
+                                DEVELOPED BY VIMOS TECHNOCRATS
                             </p>
                         </div>
                     </div>

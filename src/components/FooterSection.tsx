@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MapPin, Phone, Mail } from "lucide-react";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/VIMOS_LOGO.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,12 +24,8 @@ const FooterSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="footer-col">
-            <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="VIMOS" className="h-10 w-10 object-contain brightness-0 invert" />
-              <div>
-                <span className="font-heading text-lg font-bold text-white">VIMOS</span>
-                <span className="block text-[10px] font-body tracking-widest uppercase text-white/80">Technocrafts Pvt Ltd</span>
-              </div>
+            <div className="flex items-center mb-6">
+              <img src={logo} alt="VIMOS" className="h-12 w-auto object-contain" />
             </div>
             <p className="font-body text-sm leading-relaxed text-white/90">
               An integrated complete solution provider for the civil engineering industry.
@@ -83,7 +79,7 @@ const FooterSection = () => {
 
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-white/70">
-            © 2026 VIMOS Technocrafts Pvt. Ltd. All rights reserved.
+            © 2026 VIMOS TECHNOCRATS PVT LTD. All rights reserved.
           </p>
           <p className="font-body text-xs text-white/70">
             Designed and Developed By <a href="https://influencio.in" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-white transition-colors">Influencio ads</a>

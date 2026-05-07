@@ -1,10 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import heroImg1 from "@/assets/banner_image1.webp";
-import heroImg2 from "@/assets/banner2.webp";
-import heroImg3 from "@/assets/Environmental_Engineering.webp";
 
-const images = [heroImg1, heroImg2, heroImg3];
+const images = ["/hero-1.webp", "/hero-2.webp"];
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -71,7 +68,7 @@ const HeroSection = () => {
       });
 
       currentIndex = nextIndex;
-    }, 6000); // Change image every 6 seconds
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -98,15 +95,15 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-6">
-        <div className="max-w-3xl mt-24 md:mt-32 lg:mt-40">
+        <div className="max-w-3xl mt-32 md:mt-40 lg:mt-48">
           <p className="font-body text-sm tracking-[0.3em] uppercase mb-4 text-primary">
             Architectural & Structural Excellence
           </p>
           <h1 ref={titleRef} className="section-heading text-4xl md:text-4xl lg:text-8xl leading-[0.95] mb-6">
             <span className="text-shine">VIMOS</span><br />
-            <span className="vimos-gradient-text-shine">TECHNOCRAFTS</span>
+            <span className="vimos-gradient-text-shine">TECHNOCRATS</span>
           </h1>
-          <p ref={subRef} className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-10 leading-relaxed">
+          <p ref={subRef} className="font-body text-lg md:text-xl text-white max-w-xl mb-10 leading-relaxed">
             We are structural engineering and project management consultants for environmental projects, offering detailed project report preparation for parks and playgrounds, as well as architectural and structural designs for commercial and residential buildings.
           </p>
           <button

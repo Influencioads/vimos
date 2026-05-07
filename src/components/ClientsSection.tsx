@@ -28,6 +28,7 @@ const clients = [
   { name: "Sonarome", logo: "/Client-logos/sonarome.webp" },
   { name: "United Way Hyderabad", logo: "/Client-logos/united-way-hyderbad.webp" },
   { name: "Tumkur Urban", logo: "/Client-logos/tumkur-urban.webp" },
+ 
 ];
 
 const ClientsSection = () => {

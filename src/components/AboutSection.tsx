@@ -59,13 +59,13 @@ const AboutSection = () => {
             </div>
             <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
               <p>
-                VIMOS Technocrafts Pvt. Ltd is a young and dynamic company aiming at people living on the fast track. We understand the needs of the changing world and develop customized solutions keeping in mind stringent quality policies and international standard infrastructure practices.
+                VIMOS TECHNOCRATS is a young and dynamic company aiming at people living on the fast track. We understand the needs of the changing world and develop customized solutions keeping in mind stringent quality policies and international standard infrastructure practices.
               </p>
               <p>
-                True to our innovative spirit, we offer an unprecedented bouquet of services and top-of-the-line amenities to our customers. An integrated complete solution provider for the civil engineering industry, VIMOS combines development, construction and Project management disciplines all under one roof.
+                True to our innovative spirit, we offer an unprecedented bouquet of services and top-of-the-line amenities to our customers. An integrated complete solution provider for the civil engineering industry, VIMOS TECHNOCRATS combines development, construction and Project management disciplines all under one roof.
               </p>
               <p>
-                The management team at VIMOS consists of best of the breed architects, civil engineers, environmental engineers, structural engineers, mechanical engineers, electrical engineers, quality control engineers, and more.
+                The management team at VIMOS TECHNOCRATS consists of best of the breed architects, civil engineers, environmental engineers, structural engineers, mechanical engineers, electrical engineers, quality control engineers, and more.
               </p>
             </div>
           </div>

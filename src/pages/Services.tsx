@@ -10,22 +10,22 @@ import environmentalIcon from "@/assets/Icons Web From/environmental-engineering
 import electricalIcon from "@/assets/Icons Web From/electrical-engineering icon.webp";
 import mechanicalIcon from "@/assets/Icons Web From/mechanical-engineering icon.webp";
 import surveyIcon from "@/assets/Icons Web From/experts-in-survey icon.webp";
-import droneIcon from "@/assets/Icons Web From/drone-service Icon.webp";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
     {
-        title: "Civil Engineering",
-        subtitle: "Architectural and Structural",
-        image: civilIcon,
-        desc: "Comprehensive architectural and structural engineering solutions with cutting-edge design methodology. We ensure every structure is built with precision, safety, and longevity in mind."
-    },
-    {
         title: "Environmental Engineering",
         subtitle: "Sustainable Solutions",
         image: environmentalIcon,
         desc: "Sustainable engineering solutions ensuring environmental compliance and eco-friendly infrastructure. We balance urban development with ecological preservation."
+    },
+    {
+        title: "Civil Engineering",
+        subtitle: "Architectural and Structural",
+        image: civilIcon,
+        desc: "Comprehensive architectural and structural engineering solutions with cutting-edge design methodology. We ensure every structure is built with precision, safety, and longevity in mind."
     },
     {
         title: "Electrical Engineering",
@@ -45,12 +45,7 @@ const services = [
         image: surveyIcon,
         desc: "Precision surveying techniques including topographic, boundary, and complex construction surveys using total stations and advanced GPS equipment."
     },
-    {
-        title: "Drone Service",
-        subtitle: "Aerial Mapping",
-        image: droneIcon,
-        desc: "Aerial site surveys, mapping, and project documentation using modern drone technology for highly accurate spatial data collection."
-    },
+
     {
         title: "NABL Material Testing",
         subtitle: "Laboratory (TC-9120)",
@@ -101,7 +96,7 @@ const groupImages = (images: string[], path: string) => {
     return Object.values(groups);
 };
 
-import bannerImg from "@/assets/banner_image1.webp";
+import bannerImg from "@/assets/3.jpg";
 
 const Services = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -163,21 +158,22 @@ const Services = () => {
             <Navbar />
 
             {/* Hero Header */}
-            <section className="pt-40 pb-20 bg-vimos-dark text-white relative flex items-center min-h-[50vh]">
+            <section className="bg-vimos-dark text-white relative overflow-hidden" style={{ minHeight: '75vh' }}>
                 <div className="absolute inset-0">
                     <img src={bannerImg} alt="Services Banner" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-vimos-dark/70" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl mt-12 mb-12">
+                <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }} />
+
+                <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" style={{ minHeight: '75vh' }}>
                     <p className="service-hero-elem font-body text-sm tracking-[0.3em] uppercase text-primary mb-4 drop-shadow-md">
                         What We Do
                     </p>
                     <h1 className="service-hero-elem text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 drop-shadow-xl">
                         Engineering <span className="vimos-gradient-text-shine">Excellence</span>
                     </h1>
-                    <p className="service-hero-elem font-body text-lg text-white/90 mx-auto leading-relaxed drop-shadow-md">
-                        VIMOS offers wide-ranging consultancy services covering every specialization of engineering. From structural design to environmental compliance and advanced drone surveying, we deliver unparalleled expertise.
+                    <p className="service-hero-elem font-body text-lg text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                        VIMOS TECHNOCRATS offers wide-ranging consultancy services covering every specialization of engineering. From structural design to environmental compliance and advanced drone surveying, we deliver unparalleled expertise.
                     </p>
                 </div>
             </section>

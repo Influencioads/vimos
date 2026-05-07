@@ -1,9 +1,38 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/logo.webp";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+import { ChevronDown, Play, Image as ImageIcon, Paperclip } from "lucide-react";
+import logo from "@/assets/VIMOS_LOGO.png";
 
-const navItems = ["Home", "About", "Services", "Projects", "Clients", "Gallery", "Contact"];
+const navItems = [
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Services", id: "services" },
+  { name: "Projects", id: "projects" },
+  { name: "Clients", id: "clients" },
+  { 
+    name: "Gallery", 
+    id: "gallery",
+    dropdown: [
+      { 
+        name: "Photos", 
+        id: "gallery-photos", 
+        path: "/photos"
+      },
+      { 
+        name: "Paper Clips", 
+        id: "gallery-paper-clips", 
+        path: "/paper-clips"
+      },
+      { 
+        name: "Videos", 
+        id: "gallery-videos", 
+        path: "/videos"
+      }
+    ]
+  },
+  { name: "Contact", id: "contact" }
+];
 
 const Navbar = () => {
   const navRef = useRef<HTMLElement>(null);
@@ -11,6 +40,20 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (id: string) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setActiveDropdown(id);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 200);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -27,8 +70,14 @@ const Navbar = () => {
     };
   }, []);
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: string, path?: string) => {
     setMenuOpen(false);
+    setActiveDropdown(null);
+
+    if (path) {
+      navigate(path);
+      return;
+    }
 
     if (id === "about") {
       if (location.pathname !== "/about") {
@@ -45,8 +94,8 @@ const Navbar = () => {
     }
 
     if (id === "gallery") {
-      if (location.pathname !== "/gallery") {
-        navigate("/gallery");
+      if (location.pathname !== "/photos") {
+        navigate("/photos");
       }
       return;
     }
@@ -84,8 +133,6 @@ const Navbar = () => {
     // For other sections, if not on home page, navigate to home first (simplified approach)
     if (location.pathname !== "/") {
       navigate("/");
-      // Note: A more robust approach would wait for render then scroll, 
-      // but users typically expect these to scroll on the main page.
       setTimeout(() => {
         const el = document.getElementById(id.toLowerCase());
         if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -101,44 +148,105 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
-        ref={navRef}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-          }`}
-      >
-        <div className="container mx-auto flex items-center justify-between py-4 px-6 relative z-50">
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("home")}>
-            <img src={logo} alt="VIMOS" className="h-10 w-10 object-contain relative z-50" />
-            <div className="relative z-50">
-              <span className="font-heading text-lg font-bold tracking-wider text-primary">VIMOS</span>
-              <span className={`block text-[10px] font-body tracking-widest uppercase transition-colors duration-300 ${scrolled || menuOpen ? 'text-muted-foreground' : 'text-white/70'}`}>
-                Technocrafts
-              </span>
-            </div>
+      <div ref={navRef as any} className="fixed top-0 left-0 w-full z-50">
+        {/* Top Ticker Section */}
+        <div className="ticker-container border-b border-white/10 uppercase tracking-widest">
+          <div className="ticker-content flex items-center">
+            <span className="inline-block px-12">Vimos Technocrats – Experts in Lake Restoration & Environmental Engineering Solutions</span>
+            <span className="inline-block px-12">Vimos Technocrats – Experts in Lake Restoration & Environmental Engineering Solutions</span>
+            <span className="inline-block px-12">Vimos Technocrats – Experts in Lake Restoration & Environmental Engineering Solutions</span>
+            <span className="inline-block px-12">Vimos Technocrats – Experts in Lake Restoration & Environmental Engineering Solutions</span>
           </div>
-
-          {/* Desktop */}
-          <ul className="hidden lg:flex items-center gap-8 relative z-50">
-            {navItems.map((item) => (
-              <li key={item}>
-                <button
-                  onClick={() => scrollTo(item.toLowerCase())}
-                  className={`nav-link font-body text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${scrolled ? 'text-foreground' : 'text-white/90'}`}
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile toggle */}
-          <button className="lg:hidden flex flex-col gap-1.5 z-50 p-2 relative" onClick={() => setMenuOpen(!menuOpen)}>
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2 bg-foreground" : scrolled ? "bg-foreground" : "bg-white"}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "opacity-0 bg-foreground" : scrolled ? "bg-foreground" : "bg-white"}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2 bg-foreground" : scrolled ? "bg-foreground" : "bg-white"}`} /> 
-          </button>
         </div>
-      </nav>
+
+        <nav
+          className={`w-full transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50" : "bg-white border-b border-border/10"
+            }`}
+        >
+          <div className="container mx-auto flex items-center justify-between py-4 px-6 relative z-50">
+            <div className="flex items-center cursor-pointer" onClick={() => scrollTo("home")}>
+              <img src={logo} alt="VIMOS" className="h-12 w-auto object-contain relative z-50" />
+            </div>
+
+            {/* Desktop */}
+            <ul className="hidden lg:flex items-center gap-8 relative z-50">
+              {navItems.map((item) => (
+                <li 
+                  key={item.id} 
+                  className="relative group"
+                  onMouseEnter={() => item.dropdown && handleMouseEnter(item.id)}
+                  onMouseLeave={() => item.dropdown && handleMouseLeave()}
+                >
+                  <button
+                    onClick={() => scrollTo(item.id)}
+                    className={`nav-link font-body text-sm font-medium tracking-wide transition-all duration-300 hover:text-primary flex items-center gap-1 py-2 ${scrolled ? 'text-foreground' : 'text-foreground/90'}`}
+                  >
+                    {item.name}
+                    {item.dropdown && (
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.id ? "rotate-180" : ""}`} />
+                    )}
+                  </button>
+
+                  {/* Dropdown Menu */}
+                  {item.dropdown && activeDropdown === item.id && (
+                    <div 
+                      className="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-xl py-4 mt-1 overflow-hidden"
+                      style={{ animation: 'slideDownFade 0.3s ease-out forwards' }}
+                    >
+                      <div className="flex flex-col">
+                        {item.dropdown.map((subItem) => (
+                          <div key={subItem.id} className="relative group/sub">
+                            <button
+                              onClick={() => scrollTo(subItem.id, subItem.path)}
+                              className="w-full text-left px-6 py-3 text-sm font-medium text-foreground hover:bg-gray-50 hover:text-primary transition-all flex items-center justify-between group"
+                            >
+                              <div className="flex items-center gap-3">
+                                {subItem.name === "Photos" ? (
+                                  <ImageIcon className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+                                ) : subItem.name === "Paper Clips" ? (
+                                  <Paperclip className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+                                ) : (
+                                  <Play className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+                                )}
+                                {subItem.name}
+                              </div>
+                              {subItem.subItems && (
+                                <ChevronDown className="w-4 h-4 -rotate-90 text-gray-300 group-hover:text-primary" />
+                              )}
+                            </button>
+                            
+                            {/* Nested subItems */}
+                            {subItem.subItems && (
+                              <div className="bg-gray-50/50 py-1">
+                                {subItem.subItems.map((nested) => (
+                                  <button
+                                    key={nested.id}
+                                    onClick={() => scrollTo(nested.id, nested.path)}
+                                    className="w-full text-left pl-14 pr-6 py-2 text-xs font-medium text-muted-foreground hover:text-primary transition-all"
+                                  >
+                                    • {nested.name}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            {/* Mobile toggle */}
+            <button className="lg:hidden flex flex-col gap-1.5 z-50 p-2 relative" onClick={() => setMenuOpen(!menuOpen)}>
+              <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2 bg-foreground" : "bg-foreground"}`} />
+              <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "opacity-0 bg-foreground" : "bg-foreground"}`} />
+              <span className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2 bg-foreground" : "bg-foreground"}`} />
+            </button>
+          </div>
+        </nav>
+      </div>
 
       {/* Mobile menu */}
       {menuOpen && (
@@ -155,15 +263,56 @@ const Navbar = () => {
             {/* Header separator line */}
             <div className="w-full h-[1px] bg-gray-100 absolute top-[76px] left-0"></div>
             
-            <ul className="flex flex-col items-start gap-6 w-full px-8 mt-8 pb-10">
+            <ul className="flex flex-col items-start gap-2 w-full px-8 mt-8 pb-10">
               {navItems.map((item, index) => (
-                <li key={item} className="w-full" style={{ animation: `fadeInRight 0.3s ease forwards ${index * 0.05 + 0.1}s`, opacity: 0, transform: 'translateX(20px)' }}>
-                  <button 
-                    onClick={() => scrollTo(item.toLowerCase())} 
-                    className="font-body text-lg font-medium text-foreground hover:text-primary transition-colors text-left w-full py-2"
-                  >
-                    {item}
-                  </button>
+                <li key={item.id} className="w-full" style={{ animation: `fadeInRight 0.3s ease forwards ${index * 0.05 + 0.1}s`, opacity: 0, transform: 'translateX(20px)' }}>
+                  <div className="flex flex-col w-full">
+                    <div className="flex items-center justify-between w-full">
+                      <button 
+                        onClick={() => item.dropdown ? setMobileExpanded(mobileExpanded === item.id ? null : item.id) : scrollTo(item.id)} 
+                        className="font-body text-lg font-semibold text-foreground hover:text-primary transition-colors text-left py-3 flex-grow"
+                      >
+                        {item.name}
+                      </button>
+                      {item.dropdown && (
+                        <button 
+                          onClick={() => setMobileExpanded(mobileExpanded === item.id ? null : item.id)}
+                          className="p-3 text-muted-foreground"
+                        >
+                          <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileExpanded === item.id ? "rotate-180" : ""}`} />
+                        </button>
+                      )}
+                    </div>
+                    
+                    {/* Mobile Dropdown */}
+                    {item.dropdown && mobileExpanded === item.id && (
+                      <div className="flex flex-col pl-4 border-l-2 border-primary/10 mb-2 bg-gray-50/50 rounded-r-lg py-2">
+                        {item.dropdown.map((subItem) => (
+                          <div key={subItem.id} className="flex flex-col w-full">
+                            <button
+                              onClick={() => scrollTo(subItem.id, subItem.path)}
+                              className="font-body text-base font-medium text-foreground/80 hover:text-primary py-2 text-left px-2"
+                            >
+                              {subItem.name}
+                            </button>
+                            {subItem.subItems && (
+                              <div className="flex flex-col pl-4">
+                                {subItem.subItems.map((nested) => (
+                                  <button
+                                    key={nested.id}
+                                    onClick={() => scrollTo(nested.id, nested.path)}
+                                    className="font-body text-sm text-muted-foreground hover:text-primary py-1.5 text-left"
+                                  >
+                                    — {nested.name}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
@@ -172,6 +321,16 @@ const Navbar = () => {
       )}
       
       <style>{`
+        @keyframes slideDownFade {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         @keyframes slideInRight {
           from {
             transform: translateX(100%);

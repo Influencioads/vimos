@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import bannerImg from "@/assets/banner_image1.webp";
+import bannerImg from "@/assets/3.jpg";
 
 const clients = [
     { name: "Bangalore Development Authority", logo: "/Client-logos/Bangalore-Development-Authority.webp" },
@@ -30,6 +30,7 @@ const clients = [
     { name: "Sonarome", logo: "/Client-logos/sonarome.webp" },
     { name: "United Way Hyderabad", logo: "/Client-logos/united-way-hyderbad.webp" },
     { name: "Tumkur Urban", logo: "/Client-logos/tumkur-urban.webp" },
+  
 ];
 
 const Clients = () => {
@@ -41,13 +42,14 @@ const Clients = () => {
         <div className="overflow-x-hidden bg-background min-h-screen">
             <Navbar />
 
-            <section className="pt-40 pb-20 bg-vimos-dark text-white relative flex items-center min-h-[40vh]">
+            <section className="bg-vimos-dark text-white relative overflow-hidden" style={{ minHeight: '75vh' }}>
                 <div className="absolute inset-0">
                     <img src={bannerImg} alt="Clients Banner" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-vimos-dark/80" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl mt-12 mb-12">
+                <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }} />
+
+                <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" style={{ minHeight: '75vh' }}>
                     <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4 drop-shadow-md">Our Network</p>
                     <h2 className="section-heading text-4xl md:text-5xl lg:text-6xl text-white mb-4 drop-shadow-xl font-bold">
                         Trusted to Deliver <br className="hidden md:block" /> Engineering Excellence
@@ -63,13 +65,13 @@ const Clients = () => {
                     {clients.map((client, i) => (
                         <div
                             key={i}
-                            className="client-grid-item aspect-square flex items-center justify-center border-b border-r border-border/30 p-8 md:p-12 bg-white group hover:bg-secondary/5 transition-all duration-300"
+                            className="client-grid-item aspect-square flex items-center justify-center border-b border-r border-border/30 p-4 md:p-6 bg-white group hover:bg-secondary/5 transition-all duration-300"
                         >
                             <div className="relative w-full h-full flex items-center justify-center">
                                 <img
                                     src={client.logo}
                                     alt={client.name}
-                                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-all duration-500 ease-out"
+                                    className="max-w-full max-h-full object-contain group-hover:scale-125 transition-all duration-500 ease-out"
                                 />
                             </div>
                         </div>
