@@ -52,13 +52,66 @@ const Projects = () => {
 
     const coverImage = "/banglore-lake.webp";
 
+    const featuredItems = [
+        ...Object.values(lakesData).map((zone) => ({
+            id: zone.id,
+            title: zone.title,
+            desc: `Exploring the comprehensive ecological rejuvenation and sustainable urban engineering efforts across ${zone.lakes.length} distinct project sites in this zone.`,
+            image: `/${zone.lakes[0]?.path || ''}`,
+            bannerImage: zone.bannerImage,
+            navigatePath: `/projects/zone/${zone.id}`,
+            tag: "Regional Cluster",
+            ctaText: "Explore Zone"
+        })),
+        {
+            id: "doddanekundi-lake",
+            title: "DODDANEKUNDI LAKE",
+            desc: "Comprehensive ecological development and shoreline rejuvenation of Doddanekundi Lake to restore biodiversity and improve water quality.",
+            image: "/Projects/DODDANEKUNDI LAKE/1.webp",
+            bannerImage: "/Projects/DODDANEKUNDI LAKE/1.webp",
+            navigatePath: "/projects/doddanekundi-lake",
+            tag: "Featured Lake Project",
+            ctaText: "Explore Gallery"
+        },
+        {
+            id: "kalena-agrahara-lake",
+            title: "KALENA AGRAHARA LAKE",
+            desc: "Restoration and sustainable wetland development at Kalena Agrahara Lake, enhancing groundwater recharge and native flora habitats.",
+            image: "/Projects/Kalena Agrahara/1.webp",
+            bannerImage: "/Projects/Kalena Agrahara/1.webp",
+            navigatePath: "/projects/kalena-agrahara-lake",
+            tag: "Featured Lake Project",
+            ctaText: "Explore Gallery"
+        },
+        {
+            id: "yarappanahalli-lake",
+            title: "YARAPPANAHALLI LAKE",
+            desc: "Holistic restoration and bund stabilization of Yarappanahalli Lake to establish a self-sustaining aquatic ecosystem.",
+            image: "/Projects/YARAPPANAHALLI LAKE/1.webp",
+            bannerImage: "/Projects/YARAPPANAHALLI LAKE/1.webp",
+            navigatePath: "/projects/yarappanahalli-lake",
+            tag: "Featured Lake Project",
+            ctaText: "Explore Gallery"
+        },
+        {
+            id: "kadasonnappanahalli-lake",
+            title: "KADASONNAPPANAHALLI LAKE",
+            desc: "Desilting, inlet purification, and community walkway landscaping at Kadasonnappanahalli Lake for long-term ecological balance.",
+            image: "/Projects/kadasonnappanahalli lake/1.webp",
+            bannerImage: "/Projects/kadasonnappanahalli lake/1.webp",
+            navigatePath: "/projects/kadasonnappanahalli-lake",
+            tag: "Featured Lake Project",
+            ctaText: "Explore Gallery"
+        }
+    ];
+
     const otherProjects = [
         {
             id: "bathukammakunta-lake",
             title: "BATHUKAMMAKUNTA LAKE",
             desc: "Restoration of Bathukammakunta Lake by HYDRAA to mitigate encroachment, remove toxic debris, and restore ecological functionality.",
             image: "/Projects/BATHUKAMMAKUNTA LAKE-after.webp",
-            // tag: "Lake Restoration"
+            tag: "Lake Restoration"
         },
         {
             id: "bum-rukn-ud-dowla-lake",
@@ -132,24 +185,23 @@ const Projects = () => {
                         <div className="w-24 h-[2px] bg-primary mx-auto mt-6" />
                     </div>
                     <div className="flex flex-col gap-20 max-w-[1400px] mx-auto">
-                        {Object.values(lakesData).map((zone, index) => {
-                            const cardCoverImage = `/${zone.lakes[0]?.path || ''}`;
+                        {featuredItems.map((item, index) => {
                             const isEven = index % 2 === 0;
 
                             return (
                                 <div
-                                    key={zone.id}
+                                    key={item.id}
                                     className={`project-main-card group flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} bg-white rounded-[2.5rem] overflow-hidden cursor-pointer shadow-xl border border-border/30 hover:shadow-2xl transition-all duration-700 min-h-[450px]`}
-                                    onClick={() => navigate(`/projects/zone/${zone.id}`)}
+                                    onClick={() => navigate(item.navigatePath)}
                                 >
                                     {/* Image Section */}
                                     <div className="lg:w-1/2 relative overflow-hidden">
                                         <img
-                                            src={cardCoverImage}
-                                            alt={zone.title}
+                                            src={item.image}
+                                            alt={item.title}
                                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                             onError={(e) => {
-                                                (e.target as HTMLImageElement).src = zone.bannerImage;
+                                                (e.target as HTMLImageElement).src = item.bannerImage;
                                             }}
                                         />
                                         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
@@ -160,18 +212,18 @@ const Projects = () => {
                                         <div className="absolute -top-16 -right-16 w-32 h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-700" />
                                         
                                         <div className="relative z-10">
-                                            <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase block mb-4">Regional Cluster</span>
+                                            <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase block mb-4">{item.tag}</span>
                                             <h4 className="text-3xl md:text-4xl font-heading font-black text-foreground mb-8 leading-tight group-hover:text-primary transition-colors duration-300">
-                                                {zone.title}
+                                                {item.title}
                                             </h4>
                                             
                                             <div className="mb-10 text-foreground/60 leading-relaxed max-w-lg">
-                                                Exploring the comprehensive ecological rejuvenation and sustainable urban engineering efforts across {zone.lakes.length} distinct project sites in this zone.
+                                                {item.desc}
                                             </div>
 
                                             <div className="flex items-center justify-end pt-8 border-t border-border/20">
                                                 <div className="vimos-gradient px-10 py-4 rounded-full flex items-center gap-3 text-white font-bold text-xs uppercase tracking-widest shadow-xl shadow-primary/20 group-hover:scale-105 transition-transform duration-500">
-                                                    Explore Zone <ArrowRight size={18} />
+                                                    {item.ctaText} <ArrowRight size={18} />
                                                 </div>
                                             </div>
                                         </div>

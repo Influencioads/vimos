@@ -11,9 +11,12 @@ import { CheckCircle, Shield, Award, Users, Target, Zap } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const aboutImages = [
-    "/Projects/NALLA CHERUVU UPPAL-before.webp",
-    "/Projects/THIMMIDIKUNTA LAKE-before.webp",
-    "/Projects/THIMMIDIKUNTA LAKE-present.webp",
+    "/about_images/BUM-RUKN-UD-DOWLA LAKE.png",
+    "/about_images/Bathukamma kunta lake.png",
+    "/about_images/Nalla Cheruvu Kukatpally.png",
+    "/about_images/Nalla Cheruvu Uppal lake.png",
+    "/about_images/Sunnam Cheruvu.png",
+    "/about_images/Thimmidikunta lake.png",
 ];
 
 
@@ -23,7 +26,7 @@ const teamDepartments = [
         title: "Directors",
         accent: "from-amber-500 to-amber-600",
         members: [
-            { name: "P YOUNUS PERVEZ", role: "B.E Mechanical", photo: "/employees/1. YOUNUS PERVEZ P.jpeg" },
+            { name: "P YOUNUS PERVEZ", role: "B.E Mechanical", photo: "/employees/P YOUNUS PERVEZ.png" },
             { name: "IMAMMOHIUDDIN", role: "B.Sc, M.Com, LLB, D.E.M, Retd Manager, Bank of India", photo: null },
         ]
     },
@@ -31,7 +34,6 @@ const teamDepartments = [
         title: "Advisors",
         accent: "from-slate-600 to-slate-700",
         members: [
-            { name: "UMESH D.S", role: "Retd. AEE, B.E.M.E.Env., L.L.B., FIV", photo: null },
             { name: "P.R. BABU", role: "B.E, Retd. Deputy Executive Engineer, R&B Water Supply Board", photo: null },
             { name: "T JAGANNATH RAO", role: "B.Sc, Retd. Deputy Conservator of Forest, BBMP Lakes Division", photo: null },
             { name: "Dr. M INAYATHULLA", role: "Professor in Civil Engineering Dept., UVCE, Bangalore University", photo: null },
@@ -41,11 +43,11 @@ const teamDepartments = [
         title: "Project Managers",
         accent: "from-[#0a92d1] to-[#0878ab]",
         members: [
-            { name: "BHEEMANNA GOUDA", role: "B.E. Civil", photo: "/employees/2. BHEEMANNA GOUDA.jpeg" },
-            { name: "S. MD. SAJID ALI", role: "M.Tech Structures, MBA Finance Management", photo: "/employees/3. S MD SAJID ALI.jpeg" },
+            { name: "BHEEMANNA GOUDA", role: "B.E. Civil", photo: "/employees/BHEEMANNA GOUDA.png" },
+            { name: "S. MD. SAJID ALI", role: "M.Tech Structures, MBA Finance Management", photo: "/employees/S. MD. SAJID ALI.png" },
             { name: "SRI RANGA K R", role: "M.Tech Structures", photo: "/employees/4. SRI RANGA K R.jpeg" },
-            { name: "SURESH KUMAR REDDY", role: "M.Tech Structures", photo: "/employees/5.  N Suresh Kumar Reddy.jpeg" },
-            { name: "AJAY B M", role: "B.E. Civil", photo: "/employees/16. Ajay BM.jpeg" },
+            { name: "SURESH KUMAR REDDY", role: "M.Tech Structures", photo: "/employees/SURESH KUMAR REDDY.png" },
+            { name: "AJAY B M", role: "B.E. Civil", photo: "/employees/AJAY B M.png" },
         ]
     },
     {
@@ -59,40 +61,40 @@ const teamDepartments = [
         title: "Team Leaders",
         accent: "from-violet-500 to-violet-600",
         members: [
-            { name: "G B SREENATH", role: "B.E. Civil", photo: "/employees/8.SREENATH G B.jpeg" },
-            { name: "NAYAN D", role: "B.E. Civil", photo: "/employees/10. NAYAN D.png" },
-            { name: "KHALID PASHA R", role: "B.E. Civil", photo: "/employees/11. Khalid Pasha.jpeg" },
-            { name: "ABHAY A", role: "B.E. Civil", photo: "/employees/19. Abhay A.jpeg" },
-            { name: "RAKESH", role: "B.E. Civil", photo: "/employees/12. RAKESH.jpeg" },
+            { name: "G B SREENATH", role: "B.E. Civil", photo: "/employees/G B SREENATH.png" },
+            { name: "NAYAN D", role: "B.E. Civil", photo: "/employees/NAYAN D.png" },
+            { name: "KHALID PASHA R", role: "B.E. Civil", photo: "/employees/KHALID PASHA R.png" },
+            { name: "ABHAY A", role: "B.E. Civil", photo: "/employees/ABHAY A.png" },
+            { name: "RAKESH", role: "B.E. Civil", photo: "/employees/RAKESH.png" },
         ]
     },
     {
         title: "Civil Engineers",
         accent: "from-[#0a92d1] to-[#0878ab]",
         members: [
-            { name: "RAKESH M", role: "B.E. Civil", photo: "/employees/14. RAKESH M.jpeg" },
-            { name: "KIRAN M S", role: "B.E. Civil", photo: "/employees/15. Kiran M S.jpeg" },
-            { name: "SRI KANTH M K", role: "B.E. Civil", photo: "/employees/17. Shrikanth M K.jpeg" },
-            { name: "HASEEB BAIG", role: "B.E. Civil", photo: "/employees/21 Hasseb Baig.jpeg" },
+            { name: "RAKESH M", role: "B.E. Civil", photo: "/employees/RAKESH M.png" },
+            { name: "KIRAN M S", role: "B.E. Civil", photo: "/employees/KIRAN M S.png" },
+            { name: "SRI KANTH M K", role: "B.E. Civil", photo: "/employees/SRI KANTH M K.png" },
+            { name: "HASEEB BAIG", role: "B.E. Civil", photo: "/employees/HASEEB BAIG.png" },
             { name: "Y MANOJ KUMAR", role: "B.E. Civil", photo: "/employees/23. Y MANOJ KUMAR.jpeg" },
-            { name: "VENNAPUSA GIREESHWAR REDDY", role: "B.E. Civil", photo: "/employees/22. VENNAPUSA GIREESHWAR REDDY.jpeg" },
-            { name: "DILIP KUMAR", role: "B.E. Civil", photo: "/employees/24. Dilip Kumar.jpeg" },
-            { name: "BALA KRISHNA JOSHI", role: "B.E. Civil", photo: "/employees/25. Balakrishna Joshi.jpeg" },
-            { name: "GAGAN KUMAR R", role: "B.E. Civil", photo: "/employees/26. GAGAN KUMAR.jpeg" },
-            { name: "PRADYUTH SURESH", role: "B.E. Civil", photo: "/employees/18. Pradyuth Suresh.jpeg" },
+            { name: "VENNAPUSA GIREESHWAR REDDY", role: "B.E. Civil", photo: "/employees/VENNAPUSA GIREESHWAR REDDY.png" },
+            { name: "DILIP KUMAR", role: "B.E. Civil", photo: "/employees/DILIP KUMAR.png" },
+            { name: "BALA KRISHNA JOSHI", role: "B.E. Civil", photo: "/employees/BALA KRISHNA JOSHI.png" },
+            { name: "GAGAN KUMAR R", role: "B.E. Civil", photo: "/employees/GAGAN KUMAR R.png" },
+            { name: "PRADYUTH SURESH", role: "B.E. Civil", photo: "/employees/PRADYUTH SURESH.png" },
             { name: "VENKATESH REDDY", role: "B.E. Civil", photo: null },
-            { name: "MOHAMMAD SWAD EXAMBE", role: "B.E. Civil", photo: "/employees/28. Mohammad Swad.jpeg" },
+            { name: "MOHAMMAD SWAD EXAMBE", role: "B.E. Civil", photo: "/employees/MOHAMMAD SWAD EXAMBE.png" },
             { name: "KUSHAL M", role: "M.Tech Structures", photo: null },
-            { name: "RAJA SHEKAR", role: "B.E. Civil", photo: "/employees/20. RAJ SHEKAR.jpeg" },
+            { name: "RAJA SHEKAR", role: "B.E. Civil", photo: "/employees/RAJA SHEKAR.png" },
         ]
     },
     {
         title: "Surveyors",
         accent: "from-orange-500 to-orange-600",
         members: [
-            { name: "RAVICHANDRA K T", role: "", photo: "/employees/7.RAVICHANDRA K T.jpeg" },
-            { name: "RAVINDRA REDDY", role: "", photo: "/employees/6. Ravindra Reddy G.jpeg" },
-            { name: "MOHAMMAD ILIYAS", role: "", photo: "/employees/28. Mohammad Iliyas.jpg" },
+            { name: "RAVICHANDRA K T", role: "", photo: "/employees/RAVICHANDRA K T.png" },
+            { name: "RAVINDRA REDDY", role: "", photo: "/employees/RAVINDRA REDDY.png" },
+            { name: "MOHAMMAD ILIYAS", role: "", photo: "/employees/MOHAMMAD ILIYAS.png" },
             { name: "PAWAN", role: "", photo: null },
             { name: "PARASHU RAM", role: "", photo: null },
         ]
@@ -102,7 +104,7 @@ const teamDepartments = [
         accent: "from-rose-500 to-rose-600",
         members: [
             { name: "SHANKAR K", role: "B.E. Mechanical", photo: null },
-            { name: "N SHIVARAM", role: "B.Tech Mechanical", photo: "/employees/27. N Shivaram.jpeg" },
+            { name: "N SHIVARAM", role: "B.Tech Mechanical", photo: "/employees/N SHIVARAM.png" },
         ]
     },
     {
@@ -147,11 +149,94 @@ const reasons = [
     { icon: <Zap className="w-8 h-8 text-primary" />, title: "Strategic Advice", desc: "In-depth research on trends & market analysis, feasibility studies & appraisals." }
 ];
 
+const TeamMemberAvatar = ({ name, accent, initials }: { name: string; accent: string; initials: string }) => {
+    return (
+        <div className={`absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${accent} overflow-hidden`}>
+            {/* Subtle ambient light pulses */}
+            <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-white/15 blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-black/15 blur-2xl pointer-events-none" />
+            
+            {/* Glowing Monogram Circle */}
+            <div className="relative w-20 h-20 rounded-full flex items-center justify-center border-2 border-white/25 bg-white/10 backdrop-blur-md shadow-xl group-hover:scale-110 group-hover:border-white/40 transition-all duration-500">
+                <span className="text-white font-heading font-black text-2xl tracking-wider select-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+                    {initials}
+                </span>
+                
+                {/* Subtle visual dot anchor */}
+                <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-white/30" />
+            </div>
+        </div>
+    );
+};
+
+const categories = [
+    { id: "all", name: "All Members" },
+    { id: "leadership", name: "Leadership" },
+    { id: "management", name: "Management" },
+    { id: "engineering", name: "Engineering" },
+    { id: "operations", name: "Operations & Support" }
+];
+
+const corporateDivisions = [
+    {
+        id: "leadership",
+        title: "Leadership & Board",
+        desc: "Founders, executive directors, and strategic advisors guiding VIMOS's long-term vision.",
+        accent: "from-amber-500 to-amber-600",
+        departments: ["Directors", "Advisors"]
+    },
+    {
+        id: "management",
+        title: "Project Management",
+        desc: "Certified project leaders and laboratory managers directing critical operations, QA/QC, and execution.",
+        accent: "from-cyan-500 to-[#0878ab]",
+        departments: ["Project Managers", "NABL Lab Incharge"]
+    },
+    {
+        id: "engineering",
+        title: "Engineering Division",
+        desc: "Multi-disciplinary engineering experts specializing in structural integrity, civil works, water resource modeling, and mechanical-electrical integrations.",
+        accent: "from-[#0a92d1] to-indigo-600",
+        departments: ["Team Leaders", "Civil Engineers", "Mechanical Engineers", "Electrical Engineers", "Water Resource Engineers", "Structural Engineers"]
+    },
+    {
+        id: "operations",
+        title: "Operations & Administration",
+        desc: "The backbone of field surveying, data modeling, financial integrity, and office coordination.",
+        accent: "from-teal-500 to-emerald-600",
+        departments: ["Surveyors", "Administration"]
+    }
+];
+
+
+const getCategoryForDept = (title: string) => {
+    switch (title) {
+        case "Directors":
+        case "Advisors":
+            return "leadership";
+        case "Project Managers":
+        case "NABL Lab Incharge":
+            return "management";
+        case "Team Leaders":
+        case "Civil Engineers":
+        case "Mechanical Engineers":
+        case "Electrical Engineers":
+        case "Water Resource Engineers":
+        case "Structural Engineers":
+            return "engineering";
+        case "Surveyors":
+        case "Administration":
+            return "operations";
+        default:
+            return "engineering";
+    }
+};
+
 const About = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const sliderRef = useRef<HTMLDivElement>(null);
     const [currentImg, setCurrentImg] = useState(0);
-    const [activeDept, setActiveDept] = useState('All');
+    const [activeCategory, setActiveCategory] = useState('all');
     const imgRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     useEffect(() => {
@@ -233,6 +318,14 @@ const About = () => {
         return () => clearInterval(interval);
     }, [currentImg]);
 
+    useEffect(() => {
+        // Entrance animation on activeCategory change
+        gsap.fromTo(".team-member-card",
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.6, stagger: 0.04, ease: "power2.out", overwrite: "auto" }
+        );
+    }, [activeCategory]);
+
     return (
         <div ref={containerRef} className="overflow-x-hidden bg-background">
             <Navbar />
@@ -256,12 +349,12 @@ const About = () => {
             </section>
 
             {/* Who We Are - Two Column Layout (matches Homepage About section) */}
-            <section className="py-24 bg-white overflow-hidden">
-                <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <section className="py-12 md:py-24 bg-white overflow-hidden">
+                <div className="w-full max-w-[95%] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12">
+                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                         {/* Left Content */}
-                        <div className="about-content space-y-8 fade-up">
+                        <div className="about-content space-y-8 fade-up lg:col-span-5">
                             <div className="space-y-4">
                                 <h2 className="text-4xl md:text-5xl font-heading font-bold text-vimos-dark leading-tight">
                                     About VIMOS TECHNOCRATS
@@ -289,8 +382,8 @@ const About = () => {
                         </div>
 
                         {/* Right Image Slider */}
-                        <div ref={sliderRef} className="relative h-[450px] lg:h-[700px] w-full group fade-up">
-                            <div className="absolute inset-0 bg-vimos-dark/5 rounded-2xl overflow-hidden shadow-2xl">
+                        <div ref={sliderRef} className="relative h-[280px] sm:h-[400px] md:h-[480px] lg:h-[550px] w-full group fade-up lg:col-span-7">
+                            <div className="absolute inset-6 sm:inset-0 bg-vimos-dark/5 rounded-2xl overflow-hidden shadow-2xl">
                                 {aboutImages.map((img, index) => (
                                     <div
                                         key={img}
@@ -300,7 +393,7 @@ const About = () => {
                                         <img
                                             src={img}
                                             alt={`Project ${index + 1}`}
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full object-cover object-center"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                                     </div>
@@ -308,7 +401,7 @@ const About = () => {
                             </div>
 
                             {/* Slide indicators */}
-                            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+                            <div className="absolute bottom-10 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
                                 {aboutImages.map((_, i) => (
                                     <div
                                         key={i}
@@ -318,8 +411,8 @@ const About = () => {
                             </div>
 
                             {/* Decorative corners */}
-                            <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-[#0a92d1]/30 rounded-tr-3xl -z-10 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
-                            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-[#0a92d1]/30 rounded-bl-3xl -z-10 group-hover:-translate-x-2 group-hover:translate-y-2 transition-transform duration-500" />
+                            <div className="absolute top-0 right-0 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-32 sm:h-32 border-t-2 border-r-2 border-[#0a92d1]/30 rounded-tr-xl sm:rounded-tr-3xl -z-10 group-hover:translate-x-1 group-hover:-translate-y-1 sm:group-hover:translate-x-2 sm:group-hover:-translate-y-2 transition-transform duration-500" />
+                            <div className="absolute bottom-0 left-0 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-32 sm:h-32 border-b-2 border-l-2 border-[#0a92d1]/30 rounded-bl-xl sm:rounded-bl-3xl -z-10 group-hover:-translate-x-1 group-hover:translate-y-1 sm:group-hover:-translate-x-2 sm:group-hover:translate-y-2 transition-transform duration-500" />
                         </div>
 
                     </div>
@@ -327,7 +420,7 @@ const About = () => {
             </section>
 
             {/* Specialized Expertise - Horizontal Scroll/Cards */}
-            <section className="py-20 bg-secondary/10 border-y border-border/50">
+            <section className="py-10 md:py-20 bg-secondary/10 border-y border-border/50">
                 <div className="container mx-auto px-6 max-w-6xl">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="fade-up bg-background p-10 rounded-3xl border border-border shadow-sm">
@@ -457,132 +550,141 @@ const About = () => {
             <section className="py-32 bg-secondary/5 relative overflow-hidden">
                 {/* Decorative background elements */}
                 <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
-                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#0a92d1]/5 rounded-full blur-[100px]" />
                     <div className="absolute bottom-48 -left-24 w-72 h-72 bg-blue-400/5 rounded-full blur-[80px]" />
                 </div>
-
+ 
                 <div className="container mx-auto px-6 max-w-7xl relative z-10">
-                    <div className="text-center mb-20 fade-up">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
+                    {/* Visual Section Header */}
+                    <div className="mb-20 fade-up">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0a92d1]/10 border border-[#0a92d1]/20 text-[#0a92d1] text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
                             Expertise & Leadership
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">The <span className="vimos-gradient-text-shine">VIMOS Team</span></h2>
-                        <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+                        <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground leading-none">
+                            The <span className="vimos-gradient-text-shine">VIMOS Team</span>
+                        </h2>
+                        <p className="font-body text-muted-foreground mt-6 text-lg leading-relaxed max-w-2xl">
                             A powerhouse of multi-disciplinary experts bringing decades of experience in structural, environmental, and mechanical engineering.
                         </p>
                     </div>
 
-                    {/* Team Stats Summary Row */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-20 fade-up">
-                        {[
-                            { label: "Total Experts", value: "50+", icon: <Users size={20} /> },
-                            { label: "Departments", value: "12", icon: <Target size={20} /> },
-                            { label: "Avg. Experience", value: "15+ Yrs", icon: <Award size={20} /> },
-                            { label: "Successful Projects", value: "200+", icon: <CheckCircle size={20} /> }
-                        ].map((stat, i) => (
-                            <div key={i} className="bg-white/50 backdrop-blur-sm border border-white/20 p-6 rounded-2xl text-center shadow-sm hover:shadow-md transition-all duration-300">
-                                <div className="flex justify-center text-primary mb-3">{stat.icon}</div>
-                                <div className="text-2xl font-heading font-black text-foreground mb-1">{stat.value}</div>
-                                <div className="text-[10px] font-body font-bold text-muted-foreground uppercase tracking-widest">{stat.label}</div>
-                            </div>
+                    {/* Interactive Glassmorphic Category Filter Tabs */}
+                    <div className="flex flex-wrap justify-center md:justify-start gap-2.5 md:gap-3.5 mb-20 fade-up p-2 bg-slate-50/80 backdrop-blur-lg rounded-3xl border border-slate-200/40 max-w-fit mx-auto lg:mx-0 shadow-inner shadow-slate-100">
+                        {categories.map((cat) => (
+                            <button
+                                key={cat.id}
+                                onClick={() => setActiveCategory(cat.id)}
+                                className={`px-6 py-3 rounded-2xl text-[11px] font-heading font-extrabold uppercase tracking-wider transition-all duration-300 ${
+                                    activeCategory === cat.id
+                                        ? "bg-gradient-to-r from-[#0a92d1] to-sky-600 text-white shadow-[0_8px_20px_rgba(10,146,209,0.25)] border border-[#0a92d1]/20 scale-[1.02]"
+                                        : "bg-transparent text-muted-foreground hover:text-[#0a92d1] hover:bg-white hover:shadow-sm"
+                                }`}
+                            >
+                                {cat.name}
+                            </button>
                         ))}
                     </div>
+ 
+                    {/* Team Members Grid - Categorized Layout */}
+                    <div className="team-members-container flex flex-col gap-24">
+                        {corporateDivisions
+                            .filter(div => activeCategory === "all" || div.id === activeCategory)
+                            .map((division) => {
+                                const divisionMembers: Array<{ name: string; role: string; photo: string | null; deptTitle: string; deptAccent: string }> = [];
+                                teamDepartments.forEach(dept => {
+                                    if (division.departments.includes(dept.title)) {
+                                        dept.members.forEach(member => {
+                                            divisionMembers.push({
+                                                ...member,
+                                                deptTitle: dept.title,
+                                                deptAccent: dept.accent
+                                            });
+                                        });
+                                    }
+                                });
 
-                    {/* Department Filter Tabs */}
-                    <div className="mb-12 overflow-x-auto pb-4 scrollbar-hide fade-up">
-                        <div className="flex justify-center min-w-max md:min-w-0">
-                            <div className="flex gap-2 p-1.5 bg-white/60 backdrop-blur-md rounded-2xl border border-white/40 shadow-sm">
-                                <button
-                                    onClick={() => setActiveDept('All')}
-                                    className={`px-6 py-2.5 rounded-xl text-xs font-heading tracking-widest uppercase transition-all duration-300 ${activeDept === 'All' ? 'vimos-gradient text-white shadow-lg' : 'text-muted-foreground hover:text-foreground'}`}
-                                >
-                                    All Teams
-                                </button>
-                                {teamDepartments.map((dept) => (
-                                    <button
-                                        key={dept.title}
-                                        onClick={() => setActiveDept(dept.title)}
-                                        className={`px-6 py-2.5 rounded-xl text-xs font-heading tracking-widest uppercase transition-all duration-300 whitespace-nowrap ${activeDept === dept.title ? 'vimos-gradient text-white shadow-lg' : 'text-muted-foreground hover:text-foreground'}`}
-                                    >
-                                        {dept.title}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                                if (divisionMembers.length === 0) return null;
 
-                    {/* Team Members Grid */}
-                    <div className="team-members-container min-h-[600px]">
-                        {teamDepartments.filter(d => activeDept === 'All' || d.title === activeDept).map((dept, deptIdx) => (
-                            <div key={dept.title} className="mb-16 last:mb-0">
-                                {activeDept === 'All' && (
-                                    <div className="flex items-center gap-4 mb-8">
-                                        <div className={`h-8 w-1.5 rounded-full bg-gradient-to-b ${dept.accent}`} />
-                                        <h3 className="text-lg md:text-xl font-heading font-bold text-foreground uppercase tracking-wider">{dept.title}</h3>
-                                        <div className="flex-1 h-px bg-border/40" />
-                                    </div>
-                                )}
-                                
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                                    {dept.members.map((member, idx) => {
-                                        const initials = member.name.split(' ').slice(0, 2).map((w: string) => w[0]).join('').toUpperCase();
-                                        return (
-                                            <div
-                                                key={member.name}
-                                                className="team-member-card group bg-white rounded-[2rem] overflow-hidden border border-border/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-                                            >
-                                                {/* Profile Photo Area */}
-                                                <div className="relative aspect-[4/5] overflow-hidden bg-secondary/20">
-                                                    {member.photo ? (
-                                                        <img
-                                                            src={member.photo}
-                                                            alt={member.name}
-                                                            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                                                            onError={(e) => {
-                                                                e.currentTarget.style.display = 'none';
-                                                                const parent = e.currentTarget.parentElement;
-                                                                if (parent) {
-                                                                    const fallback = parent.querySelector('.photo-fallback');
-                                                                    if (fallback) fallback.classList.remove('hidden');
-                                                                }
-                                                            }}
-                                                        />
-                                                    ) : null}
-                                                    
-                                                    {/* Fallback for no photo */}
-                                                    <div className={`photo-fallback absolute inset-0 flex items-center justify-center ${member.photo ? 'hidden' : 'flex'}`} style={{ background: `linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)` }}>
-                                                        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #0a92d1 1px, transparent 0)`, backgroundSize: '24px 24px' }} />
-                                                        <div className="relative w-32 h-32 rounded-full bg-white flex items-center justify-center text-4xl font-heading font-black text-primary shadow-inner border-4 border-primary/5 group-hover:scale-110 transition-transform duration-500">
-                                                            {initials}
-                                                        </div>
-                                                        {/* Decorative Ring */}
-                                                        <div className="absolute w-40 h-40 border-2 border-dashed border-primary/10 rounded-full animate-spin-slow" />
-                                                    </div>
-
-                                                    {/* Overlay info on hover */}
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                                                        <div className="w-full h-1 bg-white/40 rounded-full overflow-hidden">
-                                                            <div className="w-full h-full bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-100" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                {/* Name & Designation */}
-                                                <div className="p-6 relative bg-white">
-                                                    <div className={`absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r ${dept.accent} origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
-                                                    <h4 className="font-heading text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 truncate">
-                                                        {member.name}
-                                                    </h4>
-                                                    <p className="font-body text-xs text-muted-foreground uppercase tracking-widest font-semibold truncate">
-                                                        {member.role || dept.title}
-                                                    </p>
-                                                </div>
+                                return (
+                                    <div key={division.id} className="space-y-10 fade-up">
+                                        {/* Division Header */}
+                                        <div className="space-y-3 border-b border-slate-100 pb-6">
+                                            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                                                <h3 className="text-2xl md:text-3xl font-heading font-extrabold text-slate-800 tracking-wider uppercase">
+                                                    {division.title}
+                                                </h3>
+                                                <div className={`hidden sm:block h-1.5 w-16 rounded-full bg-gradient-to-r ${division.accent}`} />
+                                                <span className="text-[10px] font-heading font-extrabold text-[#0a92d1] bg-[#0a92d1]/10 px-3 py-1 rounded-full w-max tracking-widest uppercase">
+                                                    {divisionMembers.length} {divisionMembers.length === 1 ? 'Expert' : 'Experts'}
+                                                </span>
                                             </div>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        ))}
+                                            <p className="text-sm text-muted-foreground font-body max-w-4xl leading-relaxed">
+                                                {division.desc}
+                                            </p>
+                                        </div>
+                                        
+                                        {/* Members Grid inside Division */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+                                            {divisionMembers.map((member) => {
+                                                const initials = member.name.split(' ').slice(0, 2).map((w: string) => w[0]).join('').toUpperCase();
+                                                
+                                                return (
+                                                    <div
+                                                        key={member.name}
+                                                        className="team-member-card group bg-white rounded-3xl overflow-hidden border border-slate-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.015)] hover:shadow-[0_24px_50px_rgba(10,146,209,0.09)] hover:-translate-y-2 transition-all duration-500 flex flex-col h-full relative"
+                                                    >
+                                                        {/* Card hover outline glow */}
+                                                        <div className="absolute inset-0 border-2 border-transparent rounded-3xl group-hover:border-[#0a92d1]/15 transition-colors duration-500 pointer-events-none z-20" />
+
+                                                        {/* Profile Photo Area */}
+                                                        <div className="relative w-full aspect-[4/5] overflow-hidden bg-slate-50 border-b border-slate-50">
+                                                            {member.photo ? (
+                                                                <img
+                                                                    src={member.photo}
+                                                                    alt={member.name}
+                                                                    className="w-full h-full object-cover object-top transition-all duration-700 ease-out group-hover:scale-105 filter saturate-[0.92] contrast-[1.04] brightness-[0.98] group-hover:saturate-100 group-hover:contrast-100 group-hover:brightness-100"
+                                                                    onError={(e) => {
+                                                                        e.currentTarget.style.display = 'none';
+                                                                        const parent = e.currentTarget.parentElement;
+                                                                        if (parent) {
+                                                                            const fallback = parent.querySelector('.photo-fallback');
+                                                                            if (fallback) fallback.classList.remove('hidden');
+                                                                        }
+                                                                    }}
+                                                                />
+                                                            ) : null}
+                                                            
+                                                            {/* Fallback for no photo */}
+                                                            <div className={`photo-fallback absolute inset-0 ${member.photo ? 'hidden' : 'block'}`}>
+                                                                <TeamMemberAvatar name={member.name} accent={member.deptAccent} initials={initials} />
+                                                            </div>
+     
+                                                            {/* Cohesive image bottom shadows */}
+                                                            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
+                                                        </div>
+     
+                                                        {/* Name & Designation */}
+                                                        <div className="p-6 md:p-7 flex flex-col flex-grow bg-white relative">
+                                                            {/* Hover animated top bar */}
+                                                            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${member.deptAccent} origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+                                                            
+                                                            <h4 className="font-heading text-base md:text-lg font-bold text-slate-800 mb-2 group-hover:text-[#0a92d1] transition-colors duration-300 line-clamp-2">
+                                                                {member.name}
+                                                            </h4>
+                                                            
+                                                            <span className="h-px bg-slate-100 w-full block my-3" />
+                                                            
+                                                            <p className="font-body text-[10px] text-muted-foreground uppercase tracking-widest font-extrabold leading-relaxed mt-auto">
+                                                                {member.role || member.deptTitle}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                );
+                            })}
                     </div>
                 </div>
             </section>

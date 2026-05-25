@@ -5,7 +5,7 @@ const FloatingContactIcons = () => {
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
             {/* WhatsApp Button */}
             <a
-                href="https://wa.me/YOUR_PHONE_NUMBER_HERE" // Update with actual number if needed
+                href="https://wa.me/919686691113" // Update with actual number if needed
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/20 hover:scale-110 active:scale-95 transition-all duration-300 z-50"
@@ -28,7 +28,7 @@ const FloatingContactIcons = () => {
 
             {/* Call Button */}
             <a
-                href="tel:+919876543210" // Update with actual number if needed
+                href="tel:+919686691113" // Update with actual number if needed
                 className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-black/20 hover:scale-110 active:scale-95 transition-all duration-300 z-50"
                 aria-label="Call Us"
             >

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
 import logo from "@/assets/VIMOS_LOGO.png";
 
@@ -25,7 +26,7 @@ const FooterSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="footer-col">
             <div className="flex items-center mb-6">
-              <img src={logo} alt="VIMOS" className="h-12 w-auto object-contain" />
+              <img src={logo} alt="VIMOS" className="h-[72px] w-auto object-contain" />
             </div>
             <p className="font-body text-sm leading-relaxed text-white/90">
               An integrated complete solution provider for the civil engineering industry.
@@ -35,11 +36,18 @@ const FooterSection = () => {
           <div className="footer-col">
             <h3 className="font-heading text-xs font-semibold tracking-widest uppercase text-white/90 mb-6 border-b border-white/20 pb-2 inline-block">Quick Links</h3>
             <ul className="space-y-3">
-              {["About", "Services", "Projects", "Gallery", "Testimonials"].map((l) => (
-                <li key={l}>
-                  <button onClick={() => document.getElementById(l.toLowerCase())?.scrollIntoView({ behavior: "smooth" })} className="font-body text-sm text-white/80 hover:text-white transition-colors">
-                    {l}
-                  </button>
+              {[
+                { name: "About", path: "/about" },
+                { name: "Services", path: "/services" },
+                { name: "Projects", path: "/projects" },
+                { name: "Gallery", path: "/photos" },
+                { name: "Clients", path: "/clients" },
+                { name: "Contact", path: "/contact" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="font-body text-sm text-white/80 hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,7 +75,7 @@ const FooterSection = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white/90 flex-shrink-0" />
-                <span className="font-body text-sm text-white/80">+91-8025437770</span>
+                <span className="font-body text-sm text-white/80">+91-9686691113</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-white/90 flex-shrink-0" />

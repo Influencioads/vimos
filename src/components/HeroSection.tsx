@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const images = ["/hero-1.webp", "/hero-2.webp"];
+const images = ["/dji-0003.webp", "/dji-0021.webp", "/kalena-agrahara-lake.webp"];
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);

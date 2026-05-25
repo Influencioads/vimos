@@ -4,6 +4,11 @@ import FooterSection from "@/components/FooterSection";
 import bannerImg from "@/assets/3.jpg";
 
 const clients = [
+    { name: "BBMP", logo: "/Client-logos/top-1-bbmp.jpg" },
+    { name: "WhatsApp", logo: "/Client-logos/top-2-whatsapp.jpeg" },
+    { name: "EMPRI", logo: "/Client-logos/top-3-empri.jpg" },
+    { name: "United Way Bengaluru", logo: "/Client-logos/top-4-uw-blr.jpg" },
+    { name: "United Way Hyderabad", logo: "/Client-logos/top-5-uw-hyd.jpg" },
     { name: "Bangalore Development Authority", logo: "/Client-logos/Bangalore-Development-Authority.webp" },
     { name: "GHMC", logo: "/Client-logos/GHMC.webp" },
     { name: "Jal Jeevan Mission", logo: "/Client-logos/Jal-Jeevan-Mission.webp" },
@@ -11,11 +16,9 @@ const clients = [
     { name: "Logo Bhoomi", logo: "/Client-logos/Logo-Bhoomi.webp" },
     { name: "Telangana Govt", logo: "/Client-logos/Telangana-govt.webp" },
     { name: "Aarvee Associates", logo: "/Client-logos/aarvee-associates.webp" },
-    { name: "BBMP", logo: "/Client-logos/bruhat-bengaluru-mahanagara-palike.webp" },
     { name: "City Corporation Mysuru", logo: "/Client-logos/city-corporation-mysuru.webp" },
     { name: "CMR", logo: "/Client-logos/cmr.webp" },
     { name: "EIH Ltd", logo: "/Client-logos/eih-ltd.webp" },
-    { name: "EMPRI", logo: "/Client-logos/environmental-management-and-policy-research-institute.webp" },
     { name: "Government of Karnataka", logo: "/Client-logos/government-of-karnataka.webp" },
     { name: "Govt Andhra Pradesh", logo: "/Client-logos/govt-andra-pradesh.webp" },
     { name: "KIADB", logo: "/Client-logos/karnataka-industrial-areas-development-board.webp" },
@@ -28,9 +31,7 @@ const clients = [
     { name: "SayTrees", logo: "/Client-logos/say-trees.webp" },
     { name: "Smart City", logo: "/Client-logos/smart-city.webp" },
     { name: "Sonarome", logo: "/Client-logos/sonarome.webp" },
-    { name: "United Way Hyderabad", logo: "/Client-logos/united-way-hyderbad.webp" },
     { name: "Tumkur Urban", logo: "/Client-logos/tumkur-urban.webp" },
-  
 ];
 
 const Clients = () => {
@@ -58,22 +59,18 @@ const Clients = () => {
             </section>
 
             <div className="container mx-auto px-4 lg:px-8 mb-20 animate-fade-in -mt-10 relative z-10">
-                {/* A bordered CSS grid on white background */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 border-t border-l border-border/30 max-w-[1400px] mx-auto bg-white shadow-sm">
-
-                    {/* Map remaining clients into the grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-border/20 border border-border/20 rounded-3xl overflow-hidden shadow-2xl max-w-[1400px] mx-auto">
                     {clients.map((client, i) => (
-                        <div
+                        <div 
                             key={i}
-                            className="client-grid-item aspect-square flex items-center justify-center border-b border-r border-border/30 p-4 md:p-6 bg-white group hover:bg-secondary/5 transition-all duration-300"
+                            className="client-grid-item aspect-square bg-white flex items-center justify-center p-0 group hover:bg-secondary/5 transition-colors duration-300"
                         >
-                            <div className="relative w-full h-full flex items-center justify-center">
-                                <img
-                                    src={client.logo}
-                                    alt={client.name}
-                                    className="max-w-full max-h-full object-contain group-hover:scale-125 transition-all duration-500 ease-out"
-                                />
-                            </div>
+                            <img 
+                                src={client.logo} 
+                                alt={client.name} 
+                                title={client.name}
+                                className="w-full h-full object-contain p-2 group-hover:scale-110 transition-all duration-500 ease-out" 
+                            />
                         </div>
                     ))}
                 </div>

@@ -39,7 +39,7 @@ const HomepageCTA = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative py-32 overflow-hidden bg-vimos-dark">
+        <section ref={sectionRef} className="relative py-16 md:py-32 overflow-hidden bg-vimos-dark">
             {/* Background Image with Parallax */}
             <div className="absolute inset-0 z-0">
                 <img 

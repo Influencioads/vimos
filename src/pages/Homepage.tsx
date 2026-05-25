@@ -7,22 +7,23 @@ import HomepageVideo from "@/components/HomepageVideo";
 import HomepageClients from "@/components/HomepageClients";
 import HomepageCTA from "@/components/HomepageCTA";
 import FooterSection from "@/components/FooterSection";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
-    image: "/Hero/1.jpg",
+    image: "/dji-0003.webp",
     heading: "Expert Lake Restoration & Environmental Engineering Solutions",
     description: "Partnering with government and institutional projects, VIMOS TECHNOCRATS delivers high-quality lake rejuvenation and landscape development with advanced engineering practices.",
     button: "Explore Projects"
   },
   {
-    image: "/Hero/2.jpg",
+    image: "/dji-0021.webp",
     heading: "Bringing Lakes Back to Life with Smart Environmental Solutions",
     description: "We deliver expert lake restoration and eco-landscape services that enhance biodiversity, improve water quality, and create greener surroundings for future generations.",
     button: "View Our Projects"
   },
   {
-    image: "/Hero/3.jpg",
+    image: "/kalena-agrahara-lake.webp",
     heading: "Restoring Lakes. Reviving Nature. Building a Sustainable Future.",
     description: "VIMOS TECHNOCRATS specializes in lake restoration and environmental landscaping, transforming degraded water bodies into thriving ecosystems while supporting sustainable urban development.",
     button: "View Projects"
@@ -30,6 +31,7 @@ const slides = [
 ];
 
 const Homepage = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -38,6 +40,9 @@ const Homepage = () => {
   const imageWrapperRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+
     // Initial content animation - only on mount
     const ctx = gsap.context(() => {
       gsap.from([titleRef.current, descRef.current, btnRef.current], {
@@ -155,7 +160,10 @@ const Homepage = () => {
             </p>
 
             <div ref={btnRef} className="pt-4 md:pt-6">
-                <button className="group relative w-full md:w-auto px-10 py-4 md:py-5 bg-primary text-white font-heading text-xs md:text-sm tracking-widest uppercase overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(var(--vimos-blue),0.4)]">
+                <button 
+                    onClick={() => navigate('/projects')}
+                    className="group relative w-full md:w-auto px-10 py-4 md:py-5 bg-primary text-white font-heading text-xs md:text-sm tracking-widest uppercase overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(var(--vimos-blue),0.4)]"
+                >
                     <span className="relative z-10">{slides[currentSlide].button}</span>
                     <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 </button>

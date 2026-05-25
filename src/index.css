@@ -167,7 +167,7 @@
 
   .ticker-content {
     @apply whitespace-nowrap inline-block;
-    animation: marquee 40s linear infinite;
+    animation: marquee 15s linear infinite;
   }
 
   @keyframes marquee {

@@ -47,7 +47,7 @@ const HomepageVideo = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-20 bg-secondary/10 relative overflow-hidden">
+        <section ref={sectionRef} className="py-10 md:py-20 bg-secondary/10 relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-2">

@@ -15,6 +15,7 @@ import img6 from "@/assets/gallery/gallery-6.jpeg";
 import img7 from "@/assets/gallery/gallery-7.jpeg";
 import img8 from "@/assets/gallery/gallery-8.jpeg";
 import img9 from "@/assets/gallery/gallery-9.jpeg";
+import whatsappImg1 from "@/assets/gallery/whatsapp-image-may-14.jpeg";
 
 const additionalImages = import.meta.glob("@/assets/vimos_images/*.webp", { eager: true, import: "default" });
 const additionalImagesArray = Object.entries(additionalImages)
@@ -22,7 +23,7 @@ const additionalImagesArray = Object.entries(additionalImages)
   .map(([_, src]) => src) as string[];
 
 const galleryImages = [
-  img2, img3, img5, img6, img7, img8, img9,
+  whatsappImg1, img2, img3, img5, img6, img7, img8, img9,
   ...additionalImagesArray
 ];
 

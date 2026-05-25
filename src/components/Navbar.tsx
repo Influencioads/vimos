@@ -165,7 +165,7 @@ const Navbar = () => {
         >
           <div className="container mx-auto flex items-center justify-between py-4 px-6 relative z-50">
             <div className="flex items-center cursor-pointer" onClick={() => scrollTo("home")}>
-              <img src={logo} alt="VIMOS" className="h-12 w-auto object-contain relative z-50" />
+              <img src={logo} alt="VIMOS" className="h-[72px] w-auto object-contain relative z-50" />
             </div>
 
             {/* Desktop */}

@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 
 const projectsData: Record<string, any> = {
     "bathukammakunta-lake": {
@@ -269,6 +269,59 @@ const projectsData: Record<string, any> = {
                 text: "The total project cost is ₹20.00 Crore. In addition, sports amenities and the construction of a Sewage Treatment Plant (STP) have been proposed. The restoration of the lake will significantly increase storage capacity, mitigate monsoonal flooding, improve groundwater recharge through localized desilting, and restore the natural hydrological link with downstream water bodies. Furthermore, the treatment of sewage through the proposed STP will reduce the pollution load entering the Musi River, heavily contributing to the overall Musi River rejuvenation efforts."
             }
         ]
+    },
+    "doddanekundi-lake": {
+        title: "DODDANEKUNDI LAKE",
+        images: [
+            "/Projects/DODDANEKUNDI LAKE/1.webp",
+            "/Projects/DODDANEKUNDI LAKE/2.webp",
+            "/Projects/DODDANEKUNDI LAKE/3.webp",
+            "/Projects/DODDANEKUNDI LAKE/4.webp"
+        ]
+    },
+    "kalena-agrahara-lake": {
+        title: "KALENA AGRAHARA LAKE",
+        images: [
+            "/Projects/Kalena Agrahara/1.webp",
+            "/Projects/Kalena Agrahara/2.webp",
+            "/Projects/Kalena Agrahara/3.webp",
+            "/Projects/Kalena Agrahara/4.webp",
+            "/Projects/Kalena Agrahara/5.webp",
+            "/Projects/Kalena Agrahara/6.webp",
+            "/Projects/Kalena Agrahara/7.webp"
+        ]
+    },
+    "yarappanahalli-lake": {
+        title: "YARAPPANAHALLI LAKE",
+        images: [
+            "/Projects/YARAPPANAHALLI LAKE/1.webp",
+            "/Projects/YARAPPANAHALLI LAKE/2.webp",
+            "/Projects/YARAPPANAHALLI LAKE/3.webp",
+            "/Projects/YARAPPANAHALLI LAKE/4.webp",
+            "/Projects/YARAPPANAHALLI LAKE/5.webp"
+        ]
+    },
+    "kalena-agrahara": {
+        title: "KALENA AGRAHARA LAKE",
+        images: [
+            "/Projects/Kalena Agrahara/1.webp",
+            "/Projects/Kalena Agrahara/2.webp",
+            "/Projects/Kalena Agrahara/3.webp",
+            "/Projects/Kalena Agrahara/4.webp",
+            "/Projects/Kalena Agrahara/5.webp",
+            "/Projects/Kalena Agrahara/6.webp",
+            "/Projects/Kalena Agrahara/7.webp"
+        ]
+    },
+    "kadasonnappanahalli-lake": {
+        title: "KADASONNAPPANAHALLI LAKE",
+        images: [
+            "/Projects/kadasonnappanahalli lake/1.webp",
+            "/Projects/kadasonnappanahalli lake/2.webp",
+            "/Projects/kadasonnappanahalli lake/3.webp",
+            "/Projects/kadasonnappanahalli lake/4.webp",
+            "/Projects/kadasonnappanahalli lake/5.webp"
+        ]
     }
 };
 
@@ -276,6 +329,7 @@ const ProjectDetails = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const project = id ? projectsData[id] : null;
+    const [selectedGalleryImage, setSelectedGalleryImage] = useState<{ src: string, title: string } | null>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -303,7 +357,7 @@ const ProjectDetails = () => {
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-vimos-dark via-vimos-dark/95 to-transparent z-10" />
                     <img
-                        src={project.afterImage}
+                        src={project.afterImage || project.images?.[0]}
                         alt={`${project.title} Banner`}
                         className="w-full h-full object-cover"
                     />
@@ -326,86 +380,145 @@ const ProjectDetails = () => {
 
             {/* Content Section */}
             <div className="container mx-auto px-6 md:px-12 py-16">
-                {/* Full-Width Visual Transformation */}
-                <div className="mb-20">
-                    <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">Visual Transformation</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                        <div className="w-full">
-                            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border w-full h-[350px] lg:h-[450px]">
-                                <img src={project.beforeImage} alt="Before Restoration" className="w-full h-full object-cover" />
-                                <div className="absolute top-6 left-6 bg-black/70 backdrop-blur-md px-6 py-2 rounded-full text-white text-sm font-bold tracking-widest uppercase shadow-lg">
-                                    Before
+                {/* Full-Width Visual Transformation / Multi-Image Gallery */}
+                {project.beforeImage && project.afterImage ? (
+                    <div className="mb-20">
+                        <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">Visual Transformation</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                            <div className="w-full">
+                                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border w-full h-[350px] lg:h-[450px]">
+                                    <img src={project.beforeImage} alt="Before Restoration" className="w-full h-full object-cover" />
+                                    <div className="absolute top-6 left-6 bg-black/70 backdrop-blur-md px-6 py-2 rounded-full text-white text-sm font-bold tracking-widest uppercase shadow-lg">
+                                        Before
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="w-full">
-                            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border w-full h-[350px] lg:h-[450px]">
-                                <img src={project.afterImage} alt="After Restoration" className="w-full h-full object-cover" />
-                                <div className="absolute top-6 left-6 bg-primary/95 backdrop-blur-md px-6 py-2 rounded-full text-white text-sm font-bold tracking-widest uppercase shadow-xl shadow-primary/30">
-                                    {project.afterLabel || "After"}
+                            <div className="w-full">
+                                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border w-full h-[350px] lg:h-[450px]">
+                                    <img src={project.afterImage} alt="After Restoration" className="w-full h-full object-cover" />
+                                    <div className="absolute top-6 left-6 bg-primary/95 backdrop-blur-md px-6 py-2 rounded-full text-white text-sm font-bold tracking-widest uppercase shadow-xl shadow-primary/30">
+                                        {project.afterLabel || "After"}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
-                    <div className="lg:col-span-2">
-                        {/* Project Details */}
-                        <div>
-                            {project.contentBlocks ? (
-                                <div className="space-y-12">
-                                    <h3 className="text-3xl font-heading font-bold text-foreground mb-8">Project Overview</h3>
-                                    {project.contentBlocks.map((block: any, idx: number) => (
-                                        <div key={idx} className="space-y-4">
-                                            {block.heading && <h4 className="text-2xl font-heading font-bold text-primary">{block.heading}</h4>}
-                                            {block.text && <p className="text-muted-foreground text-lg leading-relaxed font-body">{block.text}</p>}
-                                            {block.list && (
-                                                <ul className="list-disc list-outside ml-6 space-y-3 text-muted-foreground text-lg font-body mt-4">
-                                                    {block.list.map((item: string, i: number) => (
-                                                        <li key={i}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            )}
+                ) : (
+                    project.images && (
+                        <div className="mb-20">
+                            <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">Project Gallery</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {project.images.map((img: string, idx: number) => (
+                                    <div 
+                                        key={idx}
+                                        onClick={() => setSelectedGalleryImage({ src: img, title: `${project.title} - Image ${idx + 1}` })}
+                                        className="relative rounded-3xl overflow-hidden shadow-xl border border-border/50 group cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-[280px]"
+                                    >
+                                        <img src={img} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div className="bg-primary/90 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full shadow-lg">View Image</div>
                                         </div>
-                                    ))}
-                                </div>
-                            ) : (
-                                <>
-                                    <h3 className="text-3xl font-heading font-bold text-foreground mb-6">Project Overview</h3>
-                                    <p className="text-muted-foreground text-lg leading-relaxed font-body">
-                                        {project.details}
-                                    </p>
-                                </>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Sidebar container with sticky positioning */}
-                    <div className="space-y-8 lg:sticky lg:top-32 self-start z-10">
-                        <div className="bg-secondary/20 rounded-3xl p-8 border border-border/50">
-                            <h4 className="text-xl font-heading font-bold text-foreground mb-6">Key Statistics</h4>
-                            <div className="space-y-6">
-                                {project.stats.map((stat: any, idx: number) => (
-                                    <div key={idx} className="flex flex-col gap-1">
-                                        <span className="text-muted-foreground text-sm uppercase tracking-wider font-semibold">{stat.label}</span>
-                                        <span className="text-foreground text-2xl font-bold">{stat.value}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
+                    )
+                )}
 
-                        <div className="bg-vimos-dark rounded-3xl p-8 text-center text-white relative overflow-hidden">
-                            <div className="absolute inset-0 bg-primary/10" />
-                            <div className="relative z-10">
-                                <h4 className="text-xl font-heading font-bold mb-4">Developed By</h4>
-                                <div className="text-sm tracking-widest uppercase font-bold text-primary mb-2">VIMOS TECHNOCRATS</div>
-                                <p className="text-white/60 text-sm">Committed to sustainable environmental engineering and ecosystem rejuvenation.</p>
+                {/* Dynamic Text and Stats Columns */}
+                {(project.details || project.contentBlocks || (project.stats && project.stats.length > 0)) && (
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+                        <div className="lg:col-span-2">
+                            {/* Project Details */}
+                            <div>
+                                {project.contentBlocks ? (
+                                    <div className="space-y-12">
+                                        <h3 className="text-3xl font-heading font-bold text-foreground mb-8">Project Overview</h3>
+                                        {project.contentBlocks.map((block: any, idx: number) => (
+                                            <div key={idx} className="space-y-4">
+                                                {block.heading && <h4 className="text-2xl font-heading font-bold text-primary">{block.heading}</h4>}
+                                                {block.text && <p className="text-muted-foreground text-lg leading-relaxed font-body">{block.text}</p>}
+                                                {block.list && (
+                                                    <ul className="list-disc list-outside ml-6 space-y-3 text-muted-foreground text-lg font-body mt-4">
+                                                        {block.list.map((item: string, i: number) => (
+                                                            <li key={i}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    project.details && (
+                                        <>
+                                            <h3 className="text-3xl font-heading font-bold text-foreground mb-6">Project Overview</h3>
+                                            <p className="text-muted-foreground text-lg leading-relaxed font-body">
+                                                {project.details}
+                                            </p>
+                                        </>
+                                    )
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Sidebar container with sticky positioning */}
+                        <div className="space-y-8 lg:sticky lg:top-32 self-start z-10">
+                            {project.stats && project.stats.length > 0 && (
+                                <div className="bg-secondary/20 rounded-3xl p-8 border border-border/50">
+                                    <h4 className="text-xl font-heading font-bold text-foreground mb-6">Key Statistics</h4>
+                                    <div className="space-y-6">
+                                        {project.stats.map((stat: any, idx: number) => (
+                                            <div key={idx} className="flex flex-col gap-1">
+                                                <span className="text-muted-foreground text-sm uppercase tracking-wider font-semibold">{stat.label}</span>
+                                                <span className="text-foreground text-2xl font-bold">{stat.value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            <div className="bg-vimos-dark rounded-3xl p-8 text-center text-white relative overflow-hidden">
+                                <div className="absolute inset-0 bg-primary/10" />
+                                <div className="relative z-10">
+                                    <h4 className="text-xl font-heading font-bold mb-4">Developed By</h4>
+                                    <div className="text-sm tracking-widest uppercase font-bold text-primary mb-2">VIMOS TECHNOCRATS</div>
+                                    <p className="text-white/60 text-sm">Committed to sustainable environmental engineering and ecosystem rejuvenation.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
+
+            {/* Gallery Lightbox */}
+            {selectedGalleryImage && (
+                <div
+                    className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 md:p-10 cursor-zoom-out backdrop-blur-md"
+                    onClick={() => setSelectedGalleryImage(null)}
+                >
+                    <div className="relative max-w-6xl w-full">
+                        <button
+                            className="fixed top-6 right-6 md:top-10 md:right-10 z-[250] w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white/70 hover:text-white transition-all shadow-2xl border border-white/20"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedGalleryImage(null);
+                            }}
+                        >
+                            <X size={24} />
+                        </button>
+                        <img
+                            src={selectedGalleryImage.src}
+                            alt={selectedGalleryImage.title}
+                            className="max-w-full max-h-[85vh] mx-auto object-contain rounded-lg shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                        <div className="mt-6 text-center">
+                            <h2 className="text-white text-3xl font-heading font-bold mb-2">{selectedGalleryImage.title}</h2>
+                            <p className="text-white/50 font-body text-sm">Environmental Restoration Program</p>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <FooterSection />
         </div>

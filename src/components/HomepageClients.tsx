@@ -5,15 +5,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const clients = [
+    { name: "BBMP", logo: "/Client-logos/top-1-bbmp.jpg" },
+    { name: "WhatsApp", logo: "/Client-logos/top-2-whatsapp.jpeg" },
+    { name: "EMPRI", logo: "/Client-logos/top-3-empri.jpg" },
+    { name: "United Way Bengaluru", logo: "/Client-logos/top-4-uw-blr.jpg" },
+    { name: "United Way Hyderabad", logo: "/Client-logos/top-5-uw-hyd.jpg" },
     { name: "Smart City Bhopal", logo: "/client-logos-v2/1.jpg" },
-    { name: "EMPRI", logo: "/client-logos-v2/2.jpg" },
     { name: "EIH Ltd", logo: "/client-logos-v2/3.jpg" },
     { name: "CMR", logo: "/client-logos-v2/4.jpg" },
-    { name: "BBMP", logo: "/client-logos-v2/5.jpg" },
     { name: "City Corporation Mysuru", logo: "/client-logos-v2/6.jpg" },
     { name: "Bangalore Development Authority", logo: "/client-logos-v2/7.jpg" },
     { name: "Aarvee Associates", logo: "/client-logos-v2/8.jpg" },
-    { name: "United Way Hyderabad", logo: "/client-logos-v2/9.jpg" },
     { name: "TUDA", logo: "/client-logos-v2/10.jpg" },
     { name: "Telangana Govt", logo: "/client-logos-v2/11.jpg" },
     { name: "Sonarome", logo: "/client-logos-v2/12.jpg" },
@@ -68,7 +70,7 @@ const HomepageClients = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 bg-secondary/5 overflow-hidden">
+        <section ref={sectionRef} className="py-12 md:py-24 bg-secondary/5 overflow-hidden">
             <div className="container mx-auto px-6">
                 
                 {/* Header */}

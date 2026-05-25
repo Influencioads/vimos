@@ -69,12 +69,12 @@ const AboutSection = () => {
               </p>
             </div>
           </div>
-          <div ref={imgRef} className="relative">
-            <div className="overflow-hidden rounded-sm">
-              <img src={aboutImg} alt="Blueprint" className="w-full h-[500px] object-cover" />
+          <div ref={imgRef} className="relative p-6 sm:p-0">
+            <div className="relative z-10 overflow-hidden rounded-sm">
+              <img src={aboutImg} alt="Blueprint" className="w-full h-[280px] sm:h-[380px] md:h-[500px] object-cover" />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-primary rounded-sm" />
-            <div className="absolute -top-6 -right-6 w-32 h-32 vimos-gradient rounded-sm opacity-20" />
+            <div className="absolute bottom-0 left-0 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-32 sm:h-32 border-2 border-primary rounded-sm z-0" />
+            <div className="absolute top-0 right-0 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-32 sm:h-32 vimos-gradient rounded-sm opacity-20 z-0" />
           </div>
         </div>
 

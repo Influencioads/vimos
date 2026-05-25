@@ -165,7 +165,6 @@ export const lakesData: Record<string, ZoneData> = {
         id: "west-zone",
         title: "WEST ZONE LAKES",
         lakes: [
-            { "name": "West zone", "path": "WEST ZONE LAKES DEVELOPED BY VIMOS (BEFORE AFTER PHOTOS)/West zone.webp" },
             { "name": "West zone1", "path": "WEST ZONE LAKES DEVELOPED BY VIMOS (BEFORE AFTER PHOTOS)/West zone1.webp" }
         ],
         bannerImage: "https://images.unsplash.com/photo-1543877087-ebf71fde2be1?q=80&w=2070&auto=format&fit=crop"
@@ -191,5 +190,18 @@ export const lakesData: Record<string, ZoneData> = {
             { "name": "YELAHANKA LAKE", "path": "YELAHANKA ZONE LAKES DEVELOPED BY VIMOS (BEFORE AFTER PHOTOS)/YELAHANKA ZONE LAKES DEVELOPED BY VIMOS (BEFORE AFTER PHOTOS)/YELAHANKA LAKE.webp" }
         ],
         bannerImage: "https://images.unsplash.com/photo-1502425573-0ff7e9e8f6fc?q=80&w=2070&auto=format&fit=crop"
+    },
+    "bda": {
+        id: "bda",
+        title: "BDA ZONE LAKES",
+        lakes: [
+            { "name": "BYALAKERE - 1 (MUDDINAPALYA LAKE)", "path": "BDA/1.BYALAKERE -1 (MUDDINAPALYA LAKE).png" },
+            { "name": "BYALAKERE - 2 (OORAMUNDINA LAKE)", "path": "BDA/2. BYALAKERE -2 (OORAMUNDINA LAKE).png" },
+            { "name": "BYALAKERE - 3 (KADIGERE LAKE)", "path": "BDA/3. BYALAKERE -3 (KADIGERE LAKE).png" },
+            { "name": "CHIKKABANAVARA LAKE", "path": "BDA/4. CHIKKABANAVARA LAKE.png" },
+            { "name": "MEDI AGRAHARA LAKE", "path": "BDA/5. MEDI AGRAHARA LAKE.png" },
+            { "name": "RAMAGONDANAHALLI LAKE", "path": "BDA/6. RAMAGONDANAHALLI LAKE.png" }
+        ],
+        bannerImage: "/BDA/4. CHIKKABANAVARA LAKE.png"
     }
 };
